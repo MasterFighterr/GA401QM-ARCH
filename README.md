@@ -32,6 +32,7 @@ Boot up your Arch disk and choose whatever option suits your needs. Before you a
 Once it boots in (You might have to do this twice because it seems the arch install disk tends to kernel panic with this particular series of laptops), go ahead and enter iwctl. You can connect to your wifi using this template below
 
 > station wlan0 connect "NETWORK_SSID_HERE"
+
 > password:ENTER_PASSWORD_HERE
 
 After you've connected, ping google.com so as to give them a middle finger and announce that you have begun your life journey as a fellow tinfoil-hat-wearer. After you have finished growing a few more inches on your neckbeard, go ahead and set your system clock

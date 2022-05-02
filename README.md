@@ -14,12 +14,17 @@ I am not responsible for you breaking your system. This guide assumes you alread
 
 ## Pre-Install_______________________________________
 You can set it up however you like, however this is how I have it set up with duel-booting
-> /dev/nvme0n1p1 SWAP 16 GB
-> /dev/nvme0n1p2 BOOT 1GB (I will briefly tell you how to do this on windows)
-> /dev/nvme0n1p3 MSI partition or whatever
-> /dev/nvme0n1p4 Windows Partition
-> /dev/nvme0n1p5 /
-> /dev/nvme0n1p6 /Home
+`/dev/nvme0n1p1 SWAP 16 GB`
+
+`/dev/nvme0n1p2 BOOT 1GB` (I will briefly tell you how to do this on windows)
+
+`/dev/nvme0n1p3 MSI partition or whatever`
+
+`/dev/nvme0n1p4 Windows Partition`
+
+`/dev/nvme0n1p5 /`
+
+`/dev/nvme0n1p6 /Home`
 
 Windows is going to make the boot partition too small to be able to do anything useful beyond booting its own selfish OS. Download a program called AOMEI Partition Assistant and extend the boot partition to 1GB. Is that overkill? Absolutely, but data on SSDs are like $.2 a GB right now, I think you will manage.
 
@@ -27,17 +32,17 @@ Windows is going to make the boot partition too small to be able to do anything 
 
 Boot up your Arch disk and choose whatever option suits your needs. Before you actually press enter though, keep in mind that Nvidia decided to pull an EA and force the 30-series GPUs to only be compatible with the proprietary drivers, not that nouveau is very performance-friendly to begin with. You'll need to add this line to the boot parameters:
 
-> modprobe.blacklist=nouveau
+`modprobe.blacklist=nouveau`
 
 Once it boots in (You might have to do this twice because it seems the arch install disk tends to kernel panic with this particular series of laptops), go ahead and enter iwctl. You can connect to your wifi using this template below
 
-> station wlan0 connect "NETWORK_SSID_HERE"
+`# station wlan0 connect "NETWORK_SSID_HERE"`
 
-> password:ENTER_PASSWORD_HERE
+`# password:ENTER_PASSWORD_HERE`
 
 After you've connected, ping google.com so as to give them a middle finger and announce that you have begun your life journey as a fellow tinfoil-hat-wearer. After you have finished growing a few more inches on your neckbeard, go ahead and set your system clock
 
-> timedatectl set-ntp true
+`timedatectl set-ntp true`
 
 Then we will use cgdisk to partiton our drive.
 
@@ -55,8 +60,10 @@ Write changes to the disk and exit cgdisk
 
 Run these commands:
 
-`mkswap /dev/nvme0n1p1`
+`# mkswap /dev/nvme0n1p1`
 
-`mkfs.btrfs /dev/nvme0n1p5`
+`# mkfs.btrfs /dev/nvme0n1p5`
 
-`mkfs.btrfs /dev/nvme0n1p6`
+`# mkfs.btrfs /dev/nvme0n1p6`
+
+`# mkfs.fat -F 32 /dev/nvme0n1p2 (ONLY DO THIS IF YOU DIDN'T INSTALL WINDOWS)`

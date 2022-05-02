@@ -21,6 +21,8 @@ You can set it up however you like, however this is how I have it set up with du
 /dev/nvme0n1p5 /
 /dev/nvme0n1p6 /Home
 
-Windows is going to make
+Windows is going to make the boot partition too small to be able to do anything useful beyond booting its own selfish OS. Download a program called AOMEI Partition Assistant and extend the boot partition to 1GB. Is that overkill? Absolutely, but data on SSDs are like $.2 a GB right now, I think you will manage.
 
 Arch Install_______________________________________
+
+Boot up your Arch disk and choose whatever option suits your needs. Before you actually press enter though, keep in mind that Nvidia decided to pull an EA and force the 30-series GPUs to only be compatible with the proprietary drivers, not that nouveau is very performance-friendly to begin with. You'll need to add to the boot parameters  Once it boots in (You might have to do this twice

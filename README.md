@@ -9,10 +9,10 @@ No spooky BS (telemetry is gone!)
 
 Since this is a guide for an Arch install and not a Windows install, you are on your own with that one. You pretty much just need to install the drivers. Installing the nvidia drivers will be a PITS, installing the AMD software will be a bigger PITS, don't install Geforce Experience because it will ruin the entire reason of having AME (telemetry). I will update with the solution to a lack of Nvidia Control panel as you cannot install standard drivers, therefore you are unable to install the regular control panel (atleast you THINK, I have a solution for this however!)
 
-## Disclaimer________________________________________
+## Disclaimer
 I am not responsible for you breaking your system. This guide assumes you already have a machine that has fastboot and secureboot disabled, and if you are dualbooting, a windows installation already set up. I am not going to tell you some of the "best practices" nonsense that the arch wiki tells you because those things are assuming that you don't update your install-disk frequently. Use a fresh iso for God's sake.
 
-## Pre-Install_______________________________________
+## Pre-Install
 You can set it up however you like, however this is how I have it set up with duel-booting
 `/dev/nvme0n1p1 SWAP 16 GB`
 
@@ -28,8 +28,7 @@ You can set it up however you like, however this is how I have it set up with du
 
 Windows is going to make the boot partition too small to be able to do anything useful beyond booting its own selfish OS. Download a program called AOMEI Partition Assistant and extend the boot partition to 1GB. Is that overkill? Absolutely, but data on SSDs are like $.2 a GB right now, I think you will manage.
 
-## Arch Install_______________________________________
-
+## Arch Install
 Boot up your Arch disk and choose whatever option suits your needs. Before you actually press enter though, keep in mind that Nvidia decided to pull an EA and force the 30-series GPUs to only be compatible with the proprietary drivers, not that nouveau is very performance-friendly to begin with. You'll need to add this line to the boot parameters:
 
 `modprobe.blacklist=nouveau`
@@ -125,4 +124,15 @@ uncomment this line
 reboot, make sure to add the modprobe.blacklist=nouveau parameter again upon rebot
 
 Congratulations! You are officially an Arch user! If you are not a newbie (and if you are, git gud first), then you probably don't really need what I'm about to tell you up next, but even if you are a seasoned (with Slap Ya Mama) neckbeard with atleast 18 inches of hair and at minimum 2 layers of tinfoil on your head, you could still benefit from this information as it will add QOL features to your Arch G14 experience.
+
+## Getting the ball rolling
+First things first, let's add the g14 supposi- I meeean repository to pacman.conf
+
+`# vim /etc/pacman.conf`
+
+add this at the end
+
+`[g14]`
+`SigLevel = DatabaseNever Optional TrustAll`
+`Server = https://arch.asus-linux.org`
 

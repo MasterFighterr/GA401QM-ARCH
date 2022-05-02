@@ -80,5 +80,49 @@ Now we will install Arch. Consider yourself lucky to live in the days of soystem
 
 `# pacstrap /mnt base linux linux-firmware sudo vim networkmanager`
 
-WOAH AMAZING IT INSTALLED ASDJFLKASDFJKL;ASDF;LAKJSDFKLSJLAKSDJFLASDKJFLKSJDLFJSDFSLDKJF
+WOAH AMAZING IT INSTALLED ASDJFLKASDFJKLASDFLAKJSDFKLSJLAKSDJFLASDKJFLKSJDLFJSDFSLDKJF
+
+`# genfstab -U /mnt >> /mnt/etc/fstab`
+
+`# arch-chroot /mnt`
+
+`# ln -sf /usr/share/zoneinfo/Region/City /etc/localtime`
+
+`# hwclock --systohc`
+
+Edit /etc/locale.gen and uncomment the proper UTF-8 line. I'm a burgercan so I uncommented en_US.UTF-8 and ran
+
+`# locale-gen`
+
+`# vim /etc/locale.conf`
+
+you know you should be using vim, nano is dirty dirty :)
+
+`LANG=en_US.UTF-8`
+
+`# vim /etc/hostname`
+
+Write whatever you want your machine to be named
+
+set the root password
+
+`# passwd`
+
+Choose your bootloader, just know that if it is anything besides GRUB the community will look down on you and you will be doomed to never recieve support from anyone in the Arch community ever again (like they'll do anything besides tell you to read the wiki anyways lmao)
+
+`# pacman -S grub efibootmgr os-prober`
+
+`# grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB`
+
+`# vim /etc/default/grub`
+
+uncomment this line
+
+`# GRUB_DISABLE_OS_PROBER=false`
+
+`# grub-mkconfig -o /boot/grub/grub.cfg`
+
+reboot, make sure to add the modprobe.blacklist=nouveau parameter again upon rebot
+
+Congratulations! You are officially an Arch user! If you are not a newbie (and if you are, git gud first), then you probably don't really need what I'm about to tell you up next, but even if you are a seasoned (with Slap Ya Mama) neckbeard with atleast 18 inches of hair and at minimum 2 layers of tinfoil on your head, you could still benefit from this information as it will add QOL features to your Arch G14 experience.
 

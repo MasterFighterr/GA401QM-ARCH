@@ -139,6 +139,12 @@ add this at the end
 
 `Server = https://arch.asus-linux.org`
 
+while we are here, uncomment this
+
+`[multilib]`
+
+and the lines below it
+
 then run
 
 `# pacman -Syu`
@@ -174,3 +180,18 @@ logout and log back in
 install the nvidia drivers
 
 `# pacman -S nvidia-dkms nvidia-utils lib32-nvidia-utils`
+
+install nvidia prime
+
+`# pacman -S nvidia-prime`
+
+switch back to hybrid
+
+`# supergfxctl -m hybrid`
+
+logout and log back in
+
+install the mesa drivers
+
+`# pacman -S mesa mesa-demos`
+

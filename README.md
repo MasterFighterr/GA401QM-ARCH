@@ -14,6 +14,7 @@ I am not responsible for you breaking your system. This guide assumes you alread
 
 ## Pre-Install
 You can set it up however you like, however this is how I have it set up with duel-booting
+
 `/dev/nvme0n1p1 SWAP 16 GB`
 
 `/dev/nvme0n1p2 BOOT 1GB` (I will briefly tell you how to do this on windows)

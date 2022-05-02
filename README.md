@@ -156,3 +156,4 @@ reboot
 
 Hopefully the selected option will be the g14 kernel, if not, select the kernel, change it in grubs config and run that command again, no need to reboot.
 
+Now we are going to install asusctl and supergfxctl

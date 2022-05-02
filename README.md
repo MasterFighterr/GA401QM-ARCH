@@ -55,8 +55,8 @@ Write changes to the disk and exit cgdisk
 
 Run these commands:
 
-`mkswap /dev/nvme0n1p1
+`mkswap /dev/nvme0n1p1`
 
-mkfs.btrfs /dev/nvme0n1p5
+`mkfs.btrfs /dev/nvme0n1p5`
 
-mkfs.btrfs /dev/nvme0n1p6`
+`mkfs.btrfs /dev/nvme0n1p6`

@@ -133,6 +133,21 @@ First things first, let's add the g14 supposi- I meeean repository to pacman.con
 add this at the end
 
 `[g14]`
+
 `SigLevel = DatabaseNever Optional TrustAll`
+
 `Server = https://arch.asus-linux.org`
 
+then run
+
+`# pacman -Syu`
+
+`# pacman -S linux-g14 linux-g14-headers base-devel`
+
+After this, we're going to reboot into the new kernel, but let's save ourselves some effort by doing this
+
+`# vim /etc/default/grub`
+
+disable submenus and change boot option to be 2. Save and write
+
+`# sudo grub-mkconfig /boot/grub/grub.cfg`

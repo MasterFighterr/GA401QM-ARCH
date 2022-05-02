@@ -158,3 +158,19 @@ reboot
 Hopefully the selected option will be the g14 kernel, if not, select the kernel, change it in grubs config and run that command again, no need to reboot.
 
 Now we are going to install asusctl and supergfxctl
+
+`# pacman -S asusctl supergfxctl`
+
+`# systemctl enable --now power-profiles-daemon.service`
+
+`# systemctl enable --now supergfxd.service`
+
+Now switch your supergfx mode to integrated
+
+`# supergfxctl -m integrated`
+
+logout and log back in
+
+install the nvidia drivers
+
+`# pacman -S nvidia-dkms nvidia-utils lib32-nvidia-utils`

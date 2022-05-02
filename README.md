@@ -66,4 +66,12 @@ Run these commands:
 
 `# mkfs.btrfs /dev/nvme0n1p6`
 
-`# mkfs.fat -F 32 /dev/nvme0n1p2 (ONLY DO THIS IF YOU DIDN'T INSTALL WINDOWS)`
+`# mkfs.fat -F 32 /dev/nvme0n1p2` (ONLY DO THIS IF YOU DIDN'T INSTALL WINDOWS)
+
+`# mount /dev/nvme0n1p5 /mnt`
+
+`# mount --mkdir /dev/nvme0n1p6 /mnt/home`
+
+`# mount --mkdir /dev/nvme0n1p2 /mnt/boot`
+
+`# swapon /dev/nvme0n1p1`

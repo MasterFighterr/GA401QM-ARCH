@@ -75,3 +75,10 @@ Run these commands:
 `# mount --mkdir /dev/nvme0n1p2 /mnt/boot`
 
 `# swapon /dev/nvme0n1p1`
+
+Now we will install Arch. Consider yourself lucky to live in the days of soystemd, as back in the sysV days you did NOT have pacstrap. This is why Arch is a just-werks distro, you toesucking neckbeards on r/unixporn and r/linuxmasterrace can brag and gloat all you want but pacstrap literally does everything for you man.
+
+`# pacstrap /mnt base linux linux-firmware sudo vim networkmanager`
+
+WOAH AMAZING IT INSTALLED ASDJFLKASDFJKL;ASDF;LAKJSDFKLSJLAKSDJFLASDKJFLKSJDLFJSDFSLDKJF
+

@@ -195,3 +195,4 @@ install the mesa drivers
 
 `# pacman -S mesa mesa-demos`
 
+Now you pretty much have reached the point where you want to be before you install your desktop environment or window manager. I have a couple more quality of life features for you including getting the microphone button working and profiles + lighting for asusctl hotkeys.

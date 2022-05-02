@@ -151,3 +151,8 @@ After this, we're going to reboot into the new kernel, but let's save ourselves 
 disable submenus and change boot option to be 2. Save and write
 
 `# sudo grub-mkconfig /boot/grub/grub.cfg`
+
+reboot
+
+Hopefully the selected option will be the g14 kernel, if not, select the kernel, change it in grubs config and run that command again, no need to reboot.
+

@@ -41,15 +41,15 @@ After you've connected, ping google.com so as to give them a middle finger and a
 
 Then we will use cgdisk to partiton our drive.
 
-> cgdisk /dev/nvme0n1
+`cgdisk /dev/nvme0n1`
 
-> /dev/nvme0n1p1 Linux Swap
+`/dev/nvme0n1p1 Linux Swap`
 
-> /dev/nvme0n1p2 (no changes)
+`/dev/nvme0n1p2 (no changes)`
 
-> /dev/nvme0n1p5 30 GB
+`/dev/nvme0n1p5 30 GB`
 
-> /dev/nvme0n1p6 rest of your hard drive space
+`/dev/nvme0n1p6 rest of your hard drive space`
 
 Write changes to the disk and exit cgdisk
 

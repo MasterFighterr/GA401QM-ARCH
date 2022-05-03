@@ -211,10 +211,28 @@ look for a line that goes along these lines
 
 Copy the part after input: before the first -e. So basically b0003v0B05p19B6. 
 
-`vim /etc/udev/hwdb.d/90-nkey.hwdb`
+`# vim /etc/udev/hwdb.d/90-nkey.hwdb`
 
-`/etc/udev/hwdb.d/90-nkey.hwdb
+and in vim, write this out
 
-evdev:input:b0003v0B05p19B6*
+`/etc/udev/hwdb.d/90-nkey.hwdb`
 
- KEYBOARD_KEY_ff31007c=f20 # x11 mic-mute, space in start is important in this line`
+`evdev:input:b0003v0B05p19B6*`
+
+` KEYBOARD_KEY_ff31007c=f20 # x11 mic-mute, space in start is important in this line`
+
+write and exit
+
+`# sudo systemd-hwdb update`
+
+`# sudo udevadm trigger`
+
+Your mic button should now be working.
+
+Let's get asus notify rolling so that you know when you change your sick ass ledz and profiles :DDDDDDDDDDDDDDDDDDDDDDDDDDDD
+
+`# systemctl --user enable asus-notify`
+
+`# systemctl --user start asus-notify`
+
+Hell yeah baby, you're on a roll. You're pretty much good to go. Install whatever bloated ass DE or minimal ass WM you want. Keep in mind that the more minimal you get, the more features you will have to install yourself as well as setup like your hotkeys. If you're a cool kid you'll stick to unbloated modules like pipewire! Have fun!

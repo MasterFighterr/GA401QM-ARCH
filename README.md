@@ -214,5 +214,7 @@ Copy the part after input: before the first -e. So basically b0003v0B05p19B6.
 `vim /etc/udev/hwdb.d/90-nkey.hwdb`
 
 `/etc/udev/hwdb.d/90-nkey.hwdb
+
 evdev:input:b0003v0B05p19B6*
+
  KEYBOARD_KEY_ff31007c=f20 # x11 mic-mute, space in start is important in this line`

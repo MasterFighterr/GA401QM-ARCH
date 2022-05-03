@@ -191,8 +191,28 @@ switch back to hybrid
 
 logout and log back in
 
-install the mesa drivers
+install the mesa drivers. OK now listen to me here, do NOT install anything amd related besides these, I promise you that this will save you hours upon hours of ass pain. If you install anything besides the regular mesa drivers and the xf86 driver, proton and wine will straight up flat out refuse to run, don't ask me why, I nuked my steam folder (thankfully not my 1.3 tb of games though because I ain't no basic bitch :D) and found this out the hard way so that YOU didn't have to, future me or whomever you may be! Also, the xf86 driver may seem unnecessary but if you want to run xorg properly at 60 fps, you absolutely need it, believe me.
 
-`# pacman -S mesa mesa-demos`
+`# pacman -S mesa mesa-demos xf86-video-amdgpu`
 
 Now you pretty much have reached the point where you want to be before you install your desktop environment or window manager. I have a couple more quality of life features for you including getting the microphone button working and profiles + lighting for asusctl hotkeys.
+
+bind fn+f4 to asusctl led-mode -n
+
+bind fn+f5 to asusctl profile -n
+
+fix the microphone mute button 
+
+`sudo find /sys -name modalias | xargs grep -i 0b05`
+
+look for a line that goes along these lines
+
+`.../input/input25/modalias:input:b0003v0B05p19B6e0110-e0...`
+
+Copy the part after input: before the first -e. So basically b0003v0B05p19B6. 
+
+`vim /etc/udev/hwdb.d/90-nkey.hwdb`
+
+`/etc/udev/hwdb.d/90-nkey.hwdb
+evdev:input:b0003v0B05p19B6*
+ KEYBOARD_KEY_ff31007c=f20 # x11 mic-mute, space in start is important in this line`

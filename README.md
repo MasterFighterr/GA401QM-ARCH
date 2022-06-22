@@ -147,13 +147,15 @@ and the lines below it
 
 then run
 
-`# pacman -Syu`
+`# sudo pacman -Syu`
 
-`# pacman -S linux-g14 linux-g14-headers base-devel`
+`# sudo pacman -S linux-g14 linux-g14-headers base-devel`
+
+`# sudo vim `
 
 After this, we're going to reboot into the new kernel, but let's save ourselves some effort by doing this
 
-`# vim /etc/default/grub`
+`# sudo vim /etc/default/grub`
 
 disable submenus and change boot option to be 2. Save and write
 
@@ -162,6 +164,24 @@ disable submenus and change boot option to be 2. Save and write
 reboot
 
 Hopefully the selected option will be the g14 kernel, if not, select the kernel, change it in grubs config and run that command again, no need to reboot.
+
+Go ahead and make your user and add yourself to the sudoers file, and uncomment the first wheel option. Add yourself to the wheel group
+
+We need to blacklist nouveau, do this
+
+`# sudo vim /etc/modprobe.d/blacklist.conf`
+
+`blacklist nouveau'
+
+then this
+
+`# sudo vim /etc/modprobe.d/nvidia.conf
+
+`options nvidia_drm modeset=1`
+
+`options nvidia NCreg_DynamicPowerManagement=0x02`
+
+Then you're done with that, go ahead and reboot to be safe
 
 Now we are going to install asusctl and supergfxctl
 
@@ -236,3 +256,23 @@ Let's get asus notify rolling so that you know when you change your sick ass led
 `# systemctl --user start asus-notify`
 
 Hell yeah baby, you're on a roll. You're pretty much good to go. Install whatever bloated ass DE or minimal ass WM you want. Keep in mind that the more minimal you get, the more features you will have to install yourself as well as setup like your hotkeys. If you're a cool kid you'll stick to unbloated modules like pipewire! Have fun!
+
+For a minimal KDE Plasma install:
+
+`# sudo pacman -S plasma-desktop dolphin dolphin-plugins ark konsole plasma-nm plasma-pa kdeplasma-addons kde-gtk-config powerdevil sddm sddm-kcm bluedevil kscreen kinfocenter firefox partitionmanager steam steam-native-runtime git`
+
+After that, install the ttf-liberation font from before for steam
+
+Install yay
+
+`# cd /opt`
+
+`# sudo git clone https://aur.archlinux.org/yay-git.git`
+
+`# sudo chown -R user:user ./yay-git`
+
+`# cd yay-git`
+
+`makepkg -si`
+
+`yay -S minecraft-launcher jamesdsp ryzencontroller`

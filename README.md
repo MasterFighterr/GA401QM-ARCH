@@ -259,6 +259,8 @@ Hell yeah baby, you're on a roll. You're pretty much good to go. Install whateve
 
 For a minimal KDE Plasma install:
 
+`# sudo pacman -S pipewire wireplumber pipewire-pulse pipewire-alsa pipewire-jack`
+
 `# sudo pacman -S plasma-desktop dolphin dolphin-plugins ark konsole plasma-nm plasma-pa kdeplasma-addons kde-gtk-config powerdevil sddm sddm-kcm bluedevil kscreen kinfocenter firefox partitionmanager steam steam-native-runtime git`
 
 After that, install the ttf-liberation font from before for steam

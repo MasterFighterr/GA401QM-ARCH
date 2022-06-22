@@ -52,7 +52,35 @@ Then we will use cgdisk to partiton our drive.
 
 `/dev/nvme0n1p2 (no changes)`
 
-`/dev/nvme0n1p5 30 GB`
+`/dev/nvme0n1p5 50 GB` (30 if stock 1tb drive, this is assuming you have upgraded to 2tb)​
+
+45
+
+`timedatectl set-ntp true`
+
+46
+
+​
+
+47
+
+Then we will use cgdisk to partiton our drive.
+
+48
+
+​
+
+49
+
+`cgdisk /dev/nvme0n1`
+
+50
+
+​
+
+51
+
+
 
 `/dev/nvme0n1p6 rest of your hard drive space`
 

@@ -289,7 +289,11 @@ For a minimal KDE Plasma install:
 
 `# sudo pacman -S pipewire wireplumber pipewire-pulse pipewire-alsa pipewire-jack`
 
-`# sudo pacman -S plasma-desktop dolphin dolphin-plugins ark konsole plasma-nm plasma-pa kdeplasma-addons kde-gtk-config powerdevil sddm sddm-kcm bluedevil kscreen kinfocenter firefox partitionmanager steam steam-native-runtime git`
+`# sudo pacman -S plasma-desktop dolphin dolphin-plugins ark konsole plasma-nm plasma-pa kdeplasma-addons kde-gtk-config powerdevil sddm sddm-kcm bluedevil kscreen kinfocenter firefox partitionmanager plasma-wayland-session egl-wayland`
+
+some extras:
+
+`# sudo pacman -S latte-dock obs-studio steam steam-native-runtime grub-customizer qbittorrent`
 
 After that, install the ttf-liberation font from before for steam
 
@@ -305,4 +309,4 @@ Install yay
 
 `makepkg -si`
 
-`yay -S minecraft-launcher jamesdsp ryzencontroller`
+`yay -S minecraft-launcher jamesdsp ryzencontroller mangohud goverlay openrgb spotify`

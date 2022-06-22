@@ -179,8 +179,6 @@ then run
 
 `# sudo pacman -S linux-g14 linux-g14-headers base-devel`
 
-`# sudo vim `
-
 After this, we're going to reboot into the new kernel, but let's save ourselves some effort by doing this
 
 `# sudo vim /etc/default/grub`
@@ -282,6 +280,14 @@ Let's get asus notify rolling so that you know when you change your sick ass led
 `# systemctl --user enable asus-notify`
 
 `# systemctl --user start asus-notify`
+
+Let's add more threads to our makepkg,conf
+
+`# sudo vim /etc/makepkg.conf`
+
+uncomment the MAKEFLAGS line and add 8 threads
+
+`MAKEFLAGS="-j8"`
 
 Hell yeah baby, you're on a roll. You're pretty much good to go. Install whatever bloated ass DE or minimal ass WM you want. Keep in mind that the more minimal you get, the more features you will have to install yourself as well as setup like your hotkeys. If you're a cool kid you'll stick to unbloated modules like pipewire! Have fun!
 

@@ -207,6 +207,26 @@ then this
 
 `options nvidia NCreg_DynamicPowerManagement=0x02`
 
+then this
+
+`# sudo vim /etc/udev/rules.d/80-nvidia-pm.rules`
+
+`# Enable runtime PM for NVIDIA VGA/3D controller devices on driver bind`
+
+`ACTION=="bind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", TEST=="power/control", ATTR{power/control}="auto"`
+
+`ACTION=="bind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", TEST=="power/control", ATTR{power/control}="auto"`
+
+`# Disable runtime PM for NVIDIA VGA/3D controller devices on driver unbind`
+
+`ACTION=="unbind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", TEST=="power/control", ATTR{power/control}="on"`
+
+`ACTION=="unbind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", TEST=="power/control", ATTR{power/control}="on"`
+
+then after that, enable nvidia-persistenced
+
+`sudo systemctl enable --now nvidia-persistenced`
+
 Then you're done with that, go ahead and reboot to be safe
 
 Now we are going to install asusctl and supergfxctl
@@ -295,7 +315,7 @@ For a minimal KDE Plasma install:
 
 `# sudo pacman -S pipewire wireplumber pipewire-pulse pipewire-alsa pipewire-jack`
 
-`# sudo pacman -S plasma-desktop dolphin dolphin-plugins ark konsole plasma-nm plasma-pa kdeplasma-addons kde-gtk-config powerdevil sddm sddm-kcm bluedevil kscreen kinfocenter firefox partitionmanager plasma-wayland-session egl-wayland`
+`# sudo pacman -S plasma-desktop dolphin dolphin-plugins ark konsole plasma-nm plasma-pa kdeplasma-addons kde-gtk-config powerdevil sddm sddm-kcm bluedevil kscreen kinfocenter firefox partitionmanager plasma-wayland-session egl-wayland spectacle`
 
 some extras:
 

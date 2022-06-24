@@ -106,7 +106,7 @@ Run these commands:
 
 Now we will install Arch. Consider yourself lucky to live in the days of soystemd, as back in the sysV days you did NOT have pacstrap. This is why Arch is a just-werks distro, you toesucking neckbeards on r/unixporn and r/linuxmasterrace can brag and gloat all you want but pacstrap literally does everything for you man.
 
-`# pacstrap /mnt base linux linux-firmware sudo vim networkmanager`
+`# pacstrap /mnt base linux linux-firmware sudo vim networkmanager pacman-contrib`
 
 WOAH AMAZING IT INSTALLED ASDJFLKASDFJKLASDFLAKJSDFKLSJLAKSDJFLASDKJFLKSJDLFJSDFSLDKJF
 
